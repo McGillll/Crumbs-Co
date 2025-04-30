@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const FeatureSection = () => {
+  const [newItem, setNewItem] = useState('')
   return (
     <>
     <div className=' flex flex-col text-center py-10 px-25 gap-10'>
@@ -29,11 +30,19 @@ export const FeatureSection = () => {
           </div>
         </div>
       </div>
-      <div className='relative'>
-          <div className='absolute inset-0'>
-            <img className='object-cover rounded-lg' 
+      <div className='relative h-96 hover:bg-black hover:opacity-50'>
+          <div className='absolute inset-0 h-full '>
+            <img className='object-cover h-full w-full rounded-lg' 
             src="https://images.unsplash.com/photo-1623334044303-241021148842?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-
+          </div>
+          <div className='relative p-10 h-full' >
+            <div className='relative w-full py-5 '>
+              <div className='absolute rounded-md inset-0 bg-neutral-50 w-full h-full opacity-80'/>
+              <span className='relative text-4xl font-black text-orange-400'>What's New!</span>
+            </div>
+            <div className='flex h-3/4 bg items-center justify-center'>
+              <span className='text-9xl font-black text-neutral-50 opacity-75'>{newItem}</span>
+            </div>
           </div>
       </div>
     </div>
