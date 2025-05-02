@@ -5,6 +5,8 @@ import { MainLayout } from './layouts/MainLayout'
 import { AboutPage } from './pages/AboutPage'
 import { Authentication } from './pages/Authentication'
 import { CallToAction } from './components/CallToAction'
+import { AuthLayout } from './layouts/AuthLayout'
+import { RegisterPage } from './pages/RegisterPage'
 
 
 function App() {
@@ -13,7 +15,10 @@ function App() {
             <Route path='/' element={<MainLayout />}>
                 <Route index element={<HomePage />} />
                 <Route path='/about' element={<AboutPage />} />
-                <Route path='/auth' element={<Authentication />} />
+                <Route path='/auth' element={<AuthLayout />}>
+                    <Route index element={<Authentication />}/>
+                    <Route path='/auth/signup' element={<RegisterPage />} />
+                </Route>
             </Route>
         )
     )

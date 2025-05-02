@@ -8,7 +8,7 @@ export const MainLayout = () => {
   return (
     <>
         <div className='relative'>
-            <div className='fixed inset-0 left-0 top-0 w-full z-10 h-fit'>
+            <div className='fixed inset-0 left-0 top-0 w-full z-100 h-fit'>
                 <NavBar />
             </div>
         </div>
