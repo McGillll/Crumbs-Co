@@ -76,12 +76,34 @@ const AboutUs = () => {
 
                             {/* Testimonial Carousel */}
                             <div className="mt-5 flex flex-col gap-6 md:flex-row justify-center">
-                                <div className="relative">
+                                <div className="relative ">
                                     <TestimonialCard
                                         name={persons[position].name}
                                         testimony={persons[position].testimony}
                                         photo={persons[position].photo}
                                     />
+                                    <div className="absolute rounded-lg flex justify-between inset-0 z-10">
+                                        <div onClick={()=>{
+                                            if(position === 0){
+                                                setPosition(persons.length -1)
+                                                return
+                                            }
+                                            setPosition(position-1);
+                                        }} 
+                                        className="bg-neutral-300/20 h-full opacity-50 rounded-l-lg p-4 text-neutral-700 flex items-center hover:opacity-100 transition-all duration-500">
+                                            <ArrowLeftIcon className="size-6"/>
+                                        </div>
+                                        <div onClick={()=>{
+                                            if(position === persons.length-1){
+                                                setPosition(0)
+                                                return
+                                            }
+                                            setPosition(position+1);
+                                        }}
+                                        className="bg-neutral-300/20 h-full opacity-50 rounded-r-lg text-neutral-700 p-4 flex items-center hover:opacity-100 transition-all duration-500">
+                                            <ArrowRightIcon className="size-6"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
